@@ -46,7 +46,7 @@ Pro angewendetem Gatter werden u.a. folgende Werte erfasst:
 ## Notebook online starten
 
 Das Notebook kann auch ohne lokale Installation über
-
+https://hub.2i2c.mybinder.org/user/seba2312-python_prototype_mqt-odlq22bu/lab/tree/notebooks/dd_playground.ipynb
 im Browser geöffnet werden.
 
 ## Notebook ausführen

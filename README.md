@@ -29,7 +29,7 @@ Pro angewendetem Gatter werden u.a. folgende Werte erfasst:
 2. Virtuelle Umgebung erstellen und aktivieren:
    ```bash
    python3.11 -m venv venv
-   source -venv/bin/activate   # Windows: .\venv\Scripts\Activate.ps1
+   source venv/bin/activate   # Windows: .\venv\Scripts\Activate.ps1
    ```
 3. Abhängigkeiten installieren:
    ```bash

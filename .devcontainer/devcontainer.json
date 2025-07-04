@@ -10,7 +10,10 @@
       "extensions": [
         "ms-python.python",
         "ms-toolsai.jupyter"
-      ]
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "/usr/local/bin/python"
+      }
     }
   },
   "features": {
@@ -18,8 +21,5 @@
   },
   "forwardPorts": [
     8888
-  ],
-  "settings": {
-    "python.defaultInterpreterPath": "/usr/local/bin/python"
-  }
+  ]
 }

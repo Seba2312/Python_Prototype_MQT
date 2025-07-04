@@ -1,0 +1,25 @@
+{
+  "name": "dd-playground-codespace",
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "postCreateCommand": [
+    "pip install --upgrade pip",
+    "pip install ."
+  ],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+      ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "forwardPorts": [
+    8888
+  ],
+  "settings": {
+    "python.defaultInterpreterPath": "/usr/local/bin/python"
+  }
+}

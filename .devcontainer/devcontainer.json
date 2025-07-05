@@ -1,10 +1,16 @@
 {
   "name": "dd-playground-codespace",
   "image": "mcr.microsoft.com/devcontainers/python:3.11",
+
   "postCreateCommand": [
     "pip install --upgrade pip",
-    "pip install ."
+    "pip install --no-cache-dir -r requirements.txt",
+    "pip install -e .",
+    "python -m ipykernel install --user --name dd-playground --display-name 'Python 3.11 (dd-playground)'"
   ],
+
+  "postStartCommand": "jupyter lab --ip 0.0.0.0 --port 8888 --no-browser &",
+
   "customizations": {
     "vscode": {
       "extensions": [
@@ -16,10 +22,18 @@
       }
     }
   },
+
   "features": {
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
-  "forwardPorts": [
-    8888
-  ]
+
+  "forwardPorts": [8888],
+
+  "portsAttributes": {
+    "8888": {
+      "label": "JupyterLab",
+      "onAutoForward": "openBrowser",
+      "visibility": "public"
+    }
+  }
 }

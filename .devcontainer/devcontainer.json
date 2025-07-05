@@ -3,13 +3,20 @@
   "image": "mcr.microsoft.com/devcontainers/python:3.11",
 
   "postCreateCommand": [
+    "set -e",
     "pip install --upgrade pip",
-    "pip install --no-cache-dir -r requirements.txt",
-    "pip install -e .",
+
+    "pip install -e . || true",
+
+    "pip install --no-cache-dir -r requirements.txt || true",
+
+    "python - <<'PY'\nimport importlib, sys; missing=[m for m in ('matplotlib','ipywidgets','jupyterlab') if importlib.util.find_spec(m) is None];\nassert not missing, f'Missing packages: {missing}';\nPY",
+
     "python -m ipykernel install --user --name dd-playground --display-name 'Python 3.11 (dd-playground)'"
   ],
 
-  "postStartCommand": "jupyter lab --ip 0.0.0.0 --port 8888 --no-browser &",
+  "postStartCommand":
+    "python -m jupyterlab --ip 0.0.0.0 --port 8888 --ServerApp.token='' --ServerApp.password='' --no-browser &",
 
   "customizations": {
     "vscode": {

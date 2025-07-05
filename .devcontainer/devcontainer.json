@@ -3,12 +3,14 @@
   "image": "mcr.microsoft.com/devcontainers/python:3.11",
 
   "postCreateCommand": [
-    "set -e",
-    "pip install --upgrade pip",
+    "mkdir -p ~/.local/bin",
+    "echo 'export PATH=\"$HOME/.local/bin:$PATH\"' >> ~/.bashrc",
+    "export PATH=\"$HOME/.local/bin:$PATH\"",
 
-    "pip install -e . || true",
+    "python -m pip install --upgrade pip",
 
-    "pip install --no-cache-dir -r requirements.txt || true",
+    "python -m pip install --no-cache-dir -r requirements.txt",
+    "python -m pip install -e .",
 
     "python - <<'PY'\nimport importlib, sys; missing=[m for m in ('matplotlib','ipywidgets','jupyterlab') if importlib.util.find_spec(m) is None];\nassert not missing, f'Missing packages: {missing}';\nPY",
 

@@ -54,7 +54,7 @@ The notebook `notebooks/dd_playground.ipynb` demonstrates how to load and simula
 
 ```bibtex
 @article{burgholzer2025MQTCore,
-    title     = {{MQT Core}: The Backbone of the Munich Quantum Toolkit (MQT)},
+    title     = {{{MQT Core}}: {{The}} Backbone of the {{Munich Quantum Toolkit (MQT)}}},
     author    = {Lukas Burgholzer and Yannick Stade and Tom Peham and Robert Wille},
     year      = {2025},
     journal   = {Journal of Open Source Software},
@@ -63,7 +63,7 @@ The notebook `notebooks/dd_playground.ipynb` demonstrates how to load and simula
     number    = {108},
     pages     = {7478},
     doi       = {10.21105/joss.07478},
-    url       = {https://doi.org/10.21105/joss.07478}
+    url       = {https://doi.org/10.21105/joss.07478},
 }
 ```
 

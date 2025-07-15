@@ -1,56 +1,78 @@
 # DD Playground
 
-Einfacher Einstieg zur Nutzung des Decision-Diagram-Backends von MQT Core.
+A practical introduction to the decision‑diagram simulation backend of **MQT Core**.
 
-## Zweck
+## Purpose
 
-Dieses kleine Projekt bietet einen leichten Einstieg in die
-Entscheidungsdiagramm-Simulation von `mqt.core`.
-Es stellt Hilfsfunktionen sowie ein Notebook bereit, um mit
-Beispielschaltkreisen zu experimentieren und dabei Statistiken des
-Simulators zu sammeln.
+This small project makes it easy to get started with decision‑diagram simulation using `mqt.core`. It provides helper functions and a Jupyter notebook so you can experiment with sample circuits while collecting statistics from the simulator.
 
-### Gesammelte Statistiken
+### Collected statistics
 
-Pro angewendetem Gatter werden u.a. folgende Werte erfasst:
+For every gate executed, the following values are recorded:
 
-- **gate** – Name des ausgeführten Gatters
-- **nodes** – Anzahl der DD-Knoten nach dem Gatter
-- **edges** – Anzahl der Kanten im DD
-- **runtime_ms** – Laufzeit des Gatters in Millisekunden
-- **ram_MB** – aktueller Speicherverbrauch
-- **peak_MB** – bisher gemessener Höchstverbrauch
-- **fidelity** – optionaler Vergleich mit einer Referenzsimulation
-
+* **gate** – name of the executed gate  
+* **nodes** – number of nodes in the decision diagram after the gate  
+* **edges** – number of edges in the decision diagram  
+* **runtime_ms** – runtime of the gate in milliseconds  
+* **ram_MB** – current main‑memory usage  
+* **peak_MB** – peak memory usage measured so far  
+* **fidelity** – optional comparison with a reference simulation  
 
 ## Quickstart
 
-1. Python 3.11 installieren.
-2. Virtuelle Umgebung erstellen und aktivieren:
+1. Install Python 3 . 11.  
+2. Create and activate a virtual environment:
+
    ```bash
    python3.11 -m venv venv
    source venv/bin/activate   # Windows: .\venv\Scripts\Activate.ps1
    ```
-3. Abhängigkeiten installieren:
+3. Install the dependencies:
+
    ```bash
    pip install -r requirements.txt
    pip install -e .
-
    ```
-4. Notebook starten:
+4. Start the notebook:
+
    ```bash
    jupyter lab
    ```
 
+## Run the notebook online
 
-## Notebook online starten
+You can open the notebook directly in your browser—no local installation required:
 
-Das Notebook kann auch ohne lokale Installation über
-https://mybinder.org/v2/gh/Seba2312/Python_Prototype_MQT/HEAD?urlpath=lab
-im Browser geöffnet werden.
+<https://mybinder.org/v2/gh/Seba2312/Python_Prototype_MQT/HEAD?urlpath=lab>
 
-## Notebook ausführen
+## Working with the notebook
 
-Das Notebook `notebooks/dd_playground.ipynb` enthält Beispiele für das
-Laden und Simulieren von Quantenprogrammen. Eine kleine Auswahl an
-QASM-Dateien liegt im Ordner `circuits/`.
+The notebook `notebooks/dd_playground.ipynb` demonstrates how to load and simulate quantum programs. A small selection of QASM files is located in the `circuits/` folder.
+
+
+## Citation
+
+If you build on this project in academic work, please cite:
+
+```bibtex
+@article{burgholzer2025MQTCore,
+    title     = {{MQT Core}: The Backbone of the Munich Quantum Toolkit (MQT)},
+    author    = {Lukas Burgholzer and Yannick Stade and Tom Peham and Robert Wille},
+    year      = {2025},
+    journal   = {Journal of Open Source Software},
+    publisher = {The Open Journal},
+    volume    = {10},
+    number    = {108},
+    pages     = {7478},
+    doi       = {10.21105/joss.07478},
+    url       = {https://doi.org/10.21105/joss.07478}
+}
+```
+
+## Further information
+
+Detailed documentation for **MQT Core** is available at  
+<https://github.com/munich-quantum-toolkit/core?tab=readme-ov-file>
+
+More example decision‑diagram visualisations can be explored and manually added to `circuits/` from
+<https://www.cda.cit.tum.de/app/ddvis/>

@@ -52,8 +52,6 @@ The notebook `notebooks/dd_playground.ipynb` demonstrates how to load and simula
 
 ## Citation
 
-If you build on this project in academic work, please cite:
-
 ```bibtex
 @article{burgholzer2025MQTCore,
     title     = {{MQT Core}: The Backbone of the Munich Quantum Toolkit (MQT)},

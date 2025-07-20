@@ -20,7 +20,7 @@ For every gate executed, the following values are recorded:
 
 ## Quickstart
 
-1. Install Python 3 . 11.  
+1. Install Python3.11.  
 2. Create and activate a virtual environment:
 
    ```bash

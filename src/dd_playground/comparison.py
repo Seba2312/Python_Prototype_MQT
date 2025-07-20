@@ -66,10 +66,17 @@ def compare_logs(
 
 def plot_node_bars(df: pd.DataFrame, column: str = "nodes") -> None:
     """Plot side-by-side bar charts for the given metric per gate."""
-
     pivot = df.pivot(index="gate_idx", columns="impl", values=column)
-    ax = pivot.plot(kind="bar")
+
+    fig, ax = plt.subplots(figsize=(8, 4))
+    pivot.plot(kind="bar", ax=ax, legend=True)
+    fig.suptitle("Nodes after each gate", y=1.05, fontsize=12)
     ax.set_xlabel("gate index")
     ax.set_ylabel(column)
-    plt.tight_layout()
+    ax.legend(title=None)
+
+    fig.tight_layout()
     plt.show()
+
+
+
